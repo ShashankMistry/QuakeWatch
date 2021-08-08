@@ -134,7 +134,7 @@ public class AllEarthquakes extends Fragment {
         requireActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if (Constant.earthquakes.size() == Integer.parseInt(preferences.getString("want","5"))){
+                if (Constant.earthquakes.size() == Integer.parseInt(preferences.getString("want","5")) && map != null){
                     for (int i = 0; i < Constant.earthquakes.size(); i++) {
                         MarkerOptions markerOptions = new MarkerOptions().position(Constant.latLngArrayList.get(i))
                                 .title(Constant.earthquakes.get(i).getTitle())
